@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent Price Predictor for Indian Metro Cities</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Rent Price Predictor for Indian Metro Cities</h1>
+        <div class="form-container">
+            <select id="city" required>
+                <option value="">Select a city</option>
+                {% for city in cities %}
+                <option value="{{ city }}">{{ city }}</option>
+                {% endfor %}
+            </select>
+            <select id="area" required>
+                <option value="">Select an area</option>
+            </select>
+            <input type="number" id="rooms" placeholder="Number of rooms" min="1" max="10" required>
+            <input type="number" id="bathrooms" placeholder="Number of bathrooms" min="1" max="10" required>
+            <select id="budget" required>
+                <option value="">Select your budget range</option>
+                <option value="Below 5000">Below 5000</option>
+                <option value="5000-10000">5000-10000</option>
+                <option value="10000-15000">10000-15000</option>
+                <option value="15000-20000">15000-20000</option>
+                <option value="20000-25000">20000-25000</option>
+                <option value="25000-30000">25000-30000</option>
+                <option value="30000-35000">30000-35000</option>
+                <option value="35000-40000">35000-40000</option>
+                <option value="40000-45000">40000-45000</option>
+                <option value="45000-50000">45000-50000</option>
+                <option value="Above 50000">Above 50000</option>
+            </select>
+            <button id="predict">Predict Rent and Get Recommendations</button>
+        </div>
+        <div id="results" class="hidden">
+            <h2>Results</h2>
+            <p id="predicted-rent"></p>
+            <h3>Top 5 Recommendations:</h3>
+            <ul id="recommendations"></ul>
+        </div>
+    </div>
+    <div class="theme-toggle">
+        <button id="theme-switch"><i class="fas fa-sun"></i></button>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
