@@ -24,7 +24,7 @@ https://github.com/user-attachments/assets/296d91ad-748f-4bed-af3e-5f552550ef76
 To run this project first clone this repository using
 
 ```bash
-  git clone 
+  git clone https://github.com/aka-Harsh/House-Rent-Predictor.git
 ```
 Locate this repository using terminal and then create a virtual enviroment and activate it
 
